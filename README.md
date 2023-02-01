@@ -67,3 +67,30 @@ If you are torn between multiple approaches, just choose one to implement and ex
 
 As the final set of questions fit best into using Ruby on Rails, I decided to create a very minimal API-based rails repo, to which I can supply the answers to test quesitons.
 
+# Setting up this repo for examination of answers #
+
+## Versions used ##
+
+  * Ruby: 3.1.1
+  * Bundler: 2.3.26
+  * Rails: 7.0.4.2
+
+## System dependencies ##
+
+  * SQLite database system, for demo purposes only
+  * ActiveSupport::TestCase and others bundled with Rails, i.e., no RSpec
+
+## Configuration ##
+
+  * Development configuation should all be fine for evaluation purposes.
+  * Run `bin/rails db:setup` (or `bin/rails db:reset` if database files already exist) to (re-)create a populated dev environment
+
+## Starting the server ##
+
+  * Run `bin/rails server` to bring up the server
+  * Run `open http://localhost:3000/` to get a verification the server is running
+
+## How to run the test suite ##
+
+  * Tests are run using `bin/rails test`
+
