@@ -18,14 +18,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_012829) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "jounral_entries", force: :cascade do |t|
+  create_table "journal_entries", force: :cascade do |t|
     t.integer "client_id", null: false
     t.text "entry"
     t.datetime "posted_at"
-    t.boolean "published"
+    t.boolean "published", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_jounral_entries_on_client_id"
+    t.index ["client_id"], name: "index_journal_entries_on_client_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_012829) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "jounral_entries", "clients"
+  add_foreign_key "journal_entries", "clients"
   add_foreign_key "plans", "clients"
   add_foreign_key "plans", "providers"
 end

@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+## CLIENT ONE
+
+draft_one_one:
+  client: one
+  entry: "draft_one_one: Donec at pede."
+  posted_at: <%= Time.current %>
+  published: false
+
+draft_one_two:
+  client: one
+  entry: "draft_one_two: Integer placerat tristique nisl."
+  posted_at: <%= Time.current %>
+
+published_one_three:
+  client: one
+  entry: "published_one_three: Fusce commodo."
+  posted_at: <%= Time.current %>
+  published: true
+
+# client two
+
+draft_two_one:
+  client: two
+  entry: "draft_two_one: Donec at pede. Curabitur vulputate vestibulum lorem."
+  posted_at: <%= Time.current %>
+  published: false
+
+draft_two_two:
+  client: two
+  posted_at: <%= Time.current %>
+  entry: "draft_two_two: Integer placerat tristique nisl. Donec hendrerit tempor tellus."
+
+published_two_three:
+  client: two
+  entry: "published_two_three: Fusce commodo. Cras placerat accumsan nulla."
+  posted_at: <%= Time.current %>
+  published: true
