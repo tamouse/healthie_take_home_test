@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require "class_design"
+
+puts "\nFluffy the cat:"
+fluffy = ClassDesign::Animal::Cat.new
+
+puts "Fluffy eats some cat food: #{fluffy.eat(ClassDesign::Food::CatFood)}"
+puts "Fluffy eats some chicken: #{fluffy.eat(ClassDesign::Food::Chicken)}"
+puts "Fluffy eats some dog food #{fluffy.eat(ClassDesign::Food::DogFood)}"
+puts "Fluffy eats some human food: #{fluffy.eat(ClassDesign::Food::HumanFood)}"
+puts "Fluffy eats some lemons: #{fluffy.eat(ClassDesign::Food::Lemon)}"
+puts "Fluffy drinks some milk #{fluffy.eat(ClassDesign::Food::Milk)}"
+
+puts "\nFido the dog:"
+fido = ClassDesign::Animal::Dog.new
+
+puts "Fido eats some cat food: #{fido.eat(ClassDesign::Food::CatFood)}"
+puts "Fido eats some chicken: #{fido.eat(ClassDesign::Food::Chicken)}"
+puts "Fido eats some dog food #{fido.eat(ClassDesign::Food::DogFood)}"
+puts "Fido eats some human food: #{fido.eat(ClassDesign::Food::HumanFood)}"
+puts "Fido eats some lemons: #{fido.eat(ClassDesign::Food::Lemon)}"
+puts "Fido drinks some milk: #{fido.eat(ClassDesign::Food::Milk)}"
