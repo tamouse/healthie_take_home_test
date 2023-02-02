@@ -23,7 +23,12 @@ Include a driver file which requires the files, instantiates the classes, and in
 
 ## Initializing ##
 
-Navigate the terminal to the `./lib/class_design/` folder from the Rails root. It's a self-contained gem.
+Navigate the terminal to the `./lib/class_design/` directory from the Rails root. It's a self-contained gem.
+
+``` shell
+cd ./lib/class_design/
+bundle install
+```
 
 From that point, you can run the tests with:
 
@@ -32,7 +37,7 @@ rake TEST_OPTS='--verbose'
 # I like to see the test cases instead of a bunch of dots
 ```
 
-In the same folder, run the driver:
+In the same directory, run the driver:
 
 ``` shell
 exe/class_design
