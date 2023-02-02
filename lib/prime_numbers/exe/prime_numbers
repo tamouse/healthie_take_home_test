@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "prime_numbers"
+require 'benchmark'
+
+while !ARGV.empty?
+  prime = nil
+  seconds = Integer(ARGV.shift)
+  puts "\nRunning for #{seconds} seconds"
+  measures = Benchmark.measure do
+    prime = PrimeNumbers.find_prime_number(seconds)
+  end
+  puts "Real time: #{measures.real}"
+  puts "Total time: #{measures.total}"
+end
