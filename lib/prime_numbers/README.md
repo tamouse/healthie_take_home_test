@@ -10,12 +10,12 @@ Printing a number and returning `nil` really gives me the pains. A function shou
 
 ### Running the function ###
 
-From the gem folder, 
+From the Rails application root directory, navigate into the prime numbers gem and install. Then you can run an `./exe/` file to see the results:
 
 ``` shell
 cd ./lib/prime_numbers
 bundle install
-exe/prime_numbers <sec>...
+exe/prime_numbers <seconds>...
 ```
 
 For example:
