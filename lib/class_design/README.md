@@ -21,7 +21,7 @@ Include a driver file which requires the files, instantiates the classes, and in
 4. Tests exercise the Animal classes.
 5. The file `./exe/class_design` drives the classes demonsrtrating the specs.
 
-## Initializikng ##
+## Initializing ##
 
 Navigate the terminal to the `./lib/class_design/` folder from the Rails root. It's a self-contained gem.
 
