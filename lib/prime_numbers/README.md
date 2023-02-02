@@ -14,6 +14,7 @@ From the gem folder,
 
 ``` shell
 cd ./lib/prime_numbers
+bundle install
 exe/prime_numbers <sec>...
 ```
 
