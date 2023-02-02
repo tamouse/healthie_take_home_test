@@ -28,7 +28,7 @@ Navigate the terminal to the `./lib/class_design/` folder from the Rails root. I
 From that point, you can run the tests with:
 
 ``` shell
-rake TEST_OPTS='--verboze'
+rake TEST_OPTS='--verbose'
 # I like to see the test cases instead of a bunch of dots
 ```
 
