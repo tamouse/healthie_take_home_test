@@ -38,6 +38,8 @@ Create classes Cat, Dog, Chicken, CatFood, DogFood, HumanFood, Lemons
 
 Include a driver file which requires the files, instantiates the classes, and invokes the methods to demonstrate the functionality.
 
+> **NOTE:** The implementation is in `./lib/class_design/` and there is a [README](./lib/class_design/README.md) in that folder with a bit more info.
+
 ### Database and model design with queries ###
 
 We want to model providers (e.g. dietitians), their clients, and journal entries.

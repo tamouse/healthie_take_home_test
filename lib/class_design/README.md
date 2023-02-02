@@ -1,29 +1,41 @@
 # ClassDesign
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/class_design`. To experiment with that code, run `bin/console` for an interactive prompt.
+Implement the Class Design section of the Coding Take Home Test:
 
-TODO: Delete this and the text above, and describe your gem
+Create classes Cat, Dog, Chicken, CatFood, DogFood, HumanFood, Lemons
 
-## Installation
+  * a cat likes CatFood, Chicken, and Milk
+  * a dog likes DogFood, CatFood, Chicken, HumanFood
+  * a Cat can meow and a Dog can bark (print "meow" or "bark" to STDOUT)
+  * when an animal eats food it likes, it makes a noise three times
+  * when an animal eats food it dislikes, it makes a noise one time
+  * You can implement this any way you like, with whatever api you think makes sense.
 
-Install the gem and add to the application's Gemfile by executing:
+Include a driver file which requires the files, instantiates the classes, and invokes the methods to demonstrate the functionality.
 
-    $ bundle add class_design
+## Implementation Notes ##
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+1. Created two parent classes, Animal and Food.
+2. Created the class Lemon, singular instead of plural.
+3. Created a class for Milk in addition.
+4. Tests exercise the Animal classes.
+5. The file `./exe/class_design` drives the classes demonsrtrating the specs.
 
-    $ gem install class_design
+## Initializikng ##
 
-## Usage
+Navigate the terminal to the `./lib/class_design/` folder from the Rails root. It's a self-contained gem.
 
-TODO: Write usage instructions here
+From that point, you can run the tests with:
 
-## Development
+``` shell
+rake TEST_OPTS='--verboze'
+# I like to see the test cases instead of a bunch of dots
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+In the same folder, run the driver:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+``` shell
+exe/class_design
+```
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/class_design.
+which givdes a more human understanding of what's happening.

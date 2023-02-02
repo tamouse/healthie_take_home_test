@@ -33,3 +33,5 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'class_design', path: File.expand_path('../lib/class_design/', __FILE__)

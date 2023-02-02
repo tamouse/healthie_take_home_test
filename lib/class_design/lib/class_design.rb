@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-require_relative "class_design/version"
+require 'zeitwerk'
+
+loader = Zeitwerk::Loader.for_gem
+loader.enable_reloading
+loader.setup
 
 module ClassDesign
   class Error < StandardError; end
-  # Your code goes here...
 end
