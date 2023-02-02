@@ -19,7 +19,7 @@ published_one_three:
   posted_at: <%= Time.current %>
   published: true
 
-# client two
+# CLIENT TWO
 
 draft_two_one:
   client: two
