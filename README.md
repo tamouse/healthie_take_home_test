@@ -67,6 +67,22 @@ If you are torn between multiple approaches, just choose one to implement and ex
 
 As the final set of questions fit best into using Ruby on Rails, I decided to create a very minimal API-based rails repo, to which I can supply the answers to test quesitons.
 
+## Answers for Coding: Database and model design with queries ##
+
+I thought a few different ways to demonstrate the queries:
+
+1. Using tests
+2. Using a runner
+3. Creating controllers
+
+Number 3 was the more complicated, while number 1 would have taken extra work to generate interesting output. Number 2 was the simplest way to show the queries.
+
+In `./scripts/queries_for_tht.rb` is a Rails runner with methods in a class to show the actual queries as they would be done with ActiveRecord. To run:
+
+``` shell
+bin/rails runner scripts/queries_for_tht.rb 
+```
+
 # Setting up this repo for examination of answers #
 
 ## Versions used ##
