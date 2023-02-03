@@ -1,5 +1,108 @@
 # README
 
+## tl;dr ##
+
+Install dependencies however you do that.
+
+Grab the zip from github at <https://github.com/tamouse/healthie_take_home_test/archive/refs/heads/main.zip> and save the download somewhere.
+
+``` shell
+mkdir -p tmp
+cd tmp
+unzip path/to/healthie_take_home_test-main.zip
+cd healthie_take_home_test
+
+git init
+bin/setup
+bin/rails db:seed
+
+bin/rails db:environment:set RAILS_ENV=test
+bin/rails test
+
+# Coding part 1: prime numbers
+cd lib/prime_numbers
+bin/setup
+exe/prime_numbers 1 3 5 7 9
+cd -
+
+# Coding part 2: class design
+cd lib/class_design
+bin/setup
+exe/class_design 
+cd -
+
+# Coding part 3: database and model design
+bin/rails runner ./scripts/queries_for_tht.rb
+```
+
+# Setting up this repo for examination of answers #
+
+## Versions used ##
+
+  * Ruby: 3.1.1
+  * Bundler: 2.3.26
+  * Rails: 7.0.4.2
+
+## System dependencies ##
+
+  * SQLite database system, for demo purposes only
+  * ActiveSupport::TestCase and others bundled with Rails, i.e., no RSpec
+  
+## Installation ##
+
+Either unzip the repo archive or clone the repo to a working directory and run setup:
+
+### Zip archive ###
+
+``` shell
+mkdir -p tmp
+cd tmp
+unzip path/to/healthie_take_home_test.zip
+cd healthie_take_home_test
+```
+
+### Git clone ###
+
+``` shell
+mkdir -p tmp
+cd tmp
+git clone https://github.com/tamouse/healthia_take_home_test.git
+```
+
+## Initializing the repo ##
+
+In the zip version, there is no `./.git` directory, and things complain less if there is one, so first thing we need to do is initialize git.
+
+``` shell
+cd healthie_take_home_test
+git init
+bin/setup
+bin/rails db:seed
+```
+
+## Configuration ##
+
+The development configuation should all be fine for evaluation purposes.
+
+There are no controllers for this app, so there's no need to start the rails server.
+
+## Running Queries ##
+
+There is a runner devoted to executing the required queries:
+
+``` shell
+bin/rails runner ./scripts/queries_for_tht.rb
+```
+
+## Testing ##
+
+Tests are run using `bin/rails test`
+  
+``` shell
+bin/rails db:environment:set RAILS_ENV=test
+bin/rails test
+```
+  
 # Take home test for Healthie job application
 
 From the email:
@@ -103,6 +206,12 @@ Show how to do each of the queries listed above.
  
 If you are torn between multiple approaches, just choose one to implement and explain the other approach and what the pros and cons of each might be.
 
+#### Displaying the queries ####
+
+``` shell
+bin/rails runner scripts/queries_for_tht.rb 
+```
+
 # Notes on answering the take home test #
 
 ## Structure ##
@@ -110,6 +219,10 @@ If you are torn between multiple approaches, just choose one to implement and ex
 As the final set of questions fit best into using Ruby on Rails, I decided to create a very minimal API-based rails repo, to which I can supply the answers to test quesitons.
 
 ## Answers for Coding: Database and model design with queries ##
+
+Since this is a legit ActiveRecord implementation, I found it easiest to toss up a minimal api Rails app:
+
+    rails new healthie_take_home_test --api --minimal
 
 ### Displaying the results ###
 
@@ -154,32 +267,4 @@ One might suspect in an actual implementation that plans would warrant their own
     belongs_to :client
     belongs_to :plan 
     belongs_to :provider
-
-
-# Setting up this repo for examination of answers #
-
-## Versions used ##
-
-  * Ruby: 3.1.1
-  * Bundler: 2.3.26
-  * Rails: 7.0.4.2
-
-## System dependencies ##
-
-  * SQLite database system, for demo purposes only
-  * ActiveSupport::TestCase and others bundled with Rails, i.e., no RSpec
-
-## Configuration ##
-
-  * Development configuation should all be fine for evaluation purposes.
-  * Run `bin/rails db:setup` (or `bin/rails db:reset` if database files already exist) to (re-)create a populated dev environment
-
-## Starting the server ##
-
-  * Run `bin/rails server` to bring up the server
-  * Run `open http://localhost:3000/` to get a verification the server is running
-
-## How to run the test suite ##
-
-  * Tests are run using `bin/rails test`
 
