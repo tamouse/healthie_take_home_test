@@ -25,7 +25,7 @@ HTML stands for "HyperText Markup Language" and is a declarative language for ma
 
 CSS stands for "Cascading Style Sheets" and is declarative language a browser uses for determining the appearance of the HTML content. The cascading part of the name indicates that the formatting rules are inherited fromr rules with more specificity.
 
-## What is the DOM? ##
+### What is the DOM? ###
 
 DOM stands for "Document Object Model" which is determined by converting the HTML and CSS rules into syntax tree with properties that can be manipulated via JavaScript.
 
@@ -33,7 +33,7 @@ DOM stands for "Document Object Model" which is determined by converting the HTM
 
 Memory is how a computer keeps track of information it's operating upon, or which has been persisted in some way. There are different classes of memory including fast level 1 and level 2 cache which is held on the CPU (Computer Processing Unit), to RAM in the system, today typically measured in Gigabites, on to local disk / storage, remote storage, and cloud storage.
 
-## What is TCP/IP? ##
+### What is TCP/IP? ###
 
 The standard way applications running on differnt computers communicate. TCP is "Transmission Control Protocol" and deals with making sure information transmission is in the proper order and is reliably transmitted from end to end. IP is "Internet Protocol" and deals with assembling and disassembling smaller, well-known sized packets of information, however is designed to continue operating in an unreliable environment.
 
@@ -121,7 +121,7 @@ I thought a few different ways to demonstrate the queries:
 
 Number 3 was the more complicated, while number 1 would have taken extra work to generate interesting output. Number 2 was the simplest way to show the queries.
 
-> ## NOTE: If you are looking for a controller implementation I'd be happy to implement that, too.
+> ### NOTE: If you are looking for a controller implementation I'd be happy to implement that, too.
 
 In `./scripts/queries_for_tht.rb` is a Rails runner with methods in a class to show the actual queries as they would be done with ActiveRecord. To run:
 
