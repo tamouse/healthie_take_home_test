@@ -111,6 +111,8 @@ As the final set of questions fit best into using Ruby on Rails, I decided to cr
 
 ## Answers for Coding: Database and model design with queries ##
 
+### Displaying the results ###
+
 I thought a few different ways to demonstrate the queries:
 
 1. Using tests
@@ -119,11 +121,40 @@ I thought a few different ways to demonstrate the queries:
 
 Number 3 was the more complicated, while number 1 would have taken extra work to generate interesting output. Number 2 was the simplest way to show the queries.
 
+> ## NOTE: If you are looking for a controller implementation I'd be happy to implement that, too.
+
 In `./scripts/queries_for_tht.rb` is a Rails runner with methods in a class to show the actual queries as they would be done with ActiveRecord. To run:
 
 ``` shell
 bin/rails runner scripts/queries_for_tht.rb 
 ```
+
+### Possible edge cqses with using foreign keys incomplete ###
+
+The data models use foreign keys, which can cause isses, especially with a join table such as `Plan`. 
+
+  * What happens if a provider goes away? 
+  * What happens when a provider doesn't have anymore clients?
+  * When a client is deleted, the associated journal entries are also deleted, but what happens to the collection on the provider?
+
+I'm leaving these out of the take home test, but I'd still like to talk about them.
+
+One of the most common ways I've seen is to make the items on each side of the foreign key be undelete-able, and instead use some form of "soft delete", in essence the record and it associations remain behind, but the record is marked as with a status or boolean indicating it has been deleted and shouldn't be included in any further activity in the app.
+
+This requires either a gem or internally supported code to manage these checks.
+
+Sometimes, especially when you have a table that's huge and / or is the main table in the database, it's easier to just use standard indexes for associations (easier: takes less application effort to add or remove dependent and independent records). However, that's a bad practice or a code smell -- foreign keys are really the way to go, even though it requires more planning to handle all the possible cases. Modern Rails (6+) has gotten better support for foreign keys with PostGresql databases as well.
+
+### The Plan model is poorly named ###
+
+The join table should have a more Rails-ish join table name, such as `ClientsProvidersPlan` instead of just plan.
+
+One might suspect in an actual implementation that plans would warrant their own model, to keep description, price, and associated details of the plan. Then the join record would only need:
+
+    belongs_to :client
+    belongs_to :plan 
+    belongs_to :provider
+
 
 # Setting up this repo for examination of answers #
 
